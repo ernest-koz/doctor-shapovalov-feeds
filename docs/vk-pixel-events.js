@@ -1,5 +1,5 @@
 /* События пикселя VK Рекламы — doctor-shapovalov.ru
- * Сгенерировано из services.yaml 2026-11-12 18:44 UTC. НЕ РЕДАКТИРОВАТЬ ВРУЧНУЮ —
+ * Сгенерировано из services.yaml 2026-11-12 18:51 UTC. НЕ РЕДАКТИРОВАТЬ ВРУЧНУЮ —
  * правится services.yaml в репо doctor-shapovalov-feeds.
  * В кабинете VK (Сайты → пиксель → События) заранее создать события:
  *   lead_form        — категория «Оформление заявки (лид)», условие «JS событие»
@@ -15,21 +15,21 @@
   }
   /* карта услуг: slug → цена «от» (совпадает с offer id в feed.yml) */
   var SERVICES = {
-    "abdomino": 170000,
+    "abdomino": 300000,
     "blefaro": 45000,
-    "face-lifting": 500000,
+    "face-lifting": 360000,
     "breast-enlargement": 320000,
     "breast-lifting": 250000,
     "breast-reduction": 320000,
     "breast-lipofilling": 100000,
     "liposuction": 50000,
     "lipofilling": 100000,
-    "bodylift": 400000,
+    "bodylift": 500000,
     "bisha": 50000,
     "hips": 100000,
     "shoulders": 100000,
     "lips": 65000,
-    "scars": 45000
+    "scars": 20000
   };
   /* 1. Просмотр страницы услуги → service_view (динамический ретаргет) */
   var m = location.pathname.match(/^\/([a-z-]+)\/?$/);
