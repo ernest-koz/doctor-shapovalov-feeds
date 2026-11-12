@@ -77,8 +77,10 @@ def xesc(s):
     return html.escape(str(s), quote=True)
 
 
-def build_yml(shop, categories, services, gen_date):
-    """Yandex Market Language (YML) — упрощённые офферы. Услуги без цены пропускаются."""
+def build_yml(shop, categories, services, gen_date, style='yandex'):
+    """YML-фид. style='yandex' — классические офферы (slug id); style='vk' — ВК-стиль
+    (числовой vk_id, price_type/price_unit/vkCategory/weight/dimensions/ae_stock,
+    CDATA description) — структура скопирована с эталона vk.com/uslugi-*.?format=yml."""
     L = []
     L.append('<?xml version="1.0" encoding="UTF-8"?>')
     L.append(f'<yml_catalog date="{gen_date}">')
@@ -101,18 +103,39 @@ def build_yml(shop, categories, services, gen_date):
             skipped.append(s.get('slug', '?'))
             continue
         url = f"https://doctor-shapovalov.ru/{s.get('slug', '')}/"
-        L.append(f'      <offer id="{xesc(s.get("slug", ""))}" available="true">')
-        L.append(f'        <url>{xesc(url)}</url>')
-        L.append(f'        <price>{price}</price>')
-        L.append('        <currencyId>RUB</currencyId>')
-        L.append(f'        <categoryId>{xesc(categories[0].get("id", "1") if categories else "1")}</categoryId>')
-        pic = (s.get('picture') or '').strip()
-        if pic:
-            L.append(f'        <picture>{xesc(pic)}</picture>')
-        L.append('        <typePrefix>Пластическая операция</typePrefix>')
+        vk_id = re.sub(r'[^0-9]', '', str(s.get('vk_id', ''))) or '0'
         price_str = f'{price:,}'.replace(',', ' ')
-        L.append(f'        <name>{xesc(s.get("name", ""))} — от {price_str} ₽</name>')
-        L.append(f'        <description>{xesc(s.get("description", ""))}</description>')
+        if style == 'vk':
+            # ВК-стиль (эталон: vk.com/uslugi-*.?format=yml)
+            L.append(f'      <offer available="true" id="{vk_id}">')
+            L.append(f'        <name>{xesc(s.get("name", ""))}</name>')
+            L.append(f'        <url>{xesc(url)}</url>')
+            L.append('        <price_type>2</price_type>')
+            L.append('        <price_unit>0</price_unit>')
+            L.append(f'        <price>{price}</price>')
+            L.append('        <currencyId>RUB</currencyId>')
+            L.append('        <vkCategory>2053</vkCategory>')
+            L.append('        <weight>1.0</weight>')
+            L.append('        <dimensions>20.0/20.0/20.0</dimensions>')
+            L.append('        <ae_stock>5</ae_stock>')
+            pic = (s.get('picture') or '').strip()
+            if pic:
+                L.append(f'        <picture>{xesc(pic)}</picture>')
+            desc = xesc(s.get('description', '')) + f' Стоимость «от» ({price_str} ₽) — хирургическая часть, смета под ключ фиксируется на бесплатной консультации. Пластический хирург Шаповалов С.Н., СПб и Тула. ИМЕЮТСЯ ПРОТИВОПОКАЗАНИЯ, НЕОБХОДИМА КОНСУЛЬТАЦИЯ СПЕЦИАЛИСТА.'
+            L.append(f'        <description><![CDATA[{desc}]]></description>')
+        else:
+            # Яндекс-стиль
+            L.append(f'      <offer id="{xesc(s.get("slug", ""))}" available="true">')
+            L.append(f'        <url>{xesc(url)}</url>')
+            L.append(f'        <price>{price}</price>')
+            L.append('        <currencyId>RUB</currencyId>')
+            L.append(f'        <categoryId>{xesc(categories[0].get("id", "1") if categories else "1")}</categoryId>')
+            pic = (s.get('picture') or '').strip()
+            if pic:
+                L.append(f'        <picture>{xesc(pic)}</picture>')
+            L.append('        <typePrefix>Пластическая операция</typePrefix>')
+            L.append(f'        <name>{xesc(s.get("name", ""))} — от {price_str} ₽</name>')
+            L.append(f'        <description>{xesc(s.get("description", ""))}</description>')
         L.append('      </offer>')
         included += 1
     L.append('    </offers>')
@@ -171,12 +194,13 @@ def build_pixel_js(services, gen_date, pixel_id=None):
     """JS-сниппет событий пикселя VK: service_view (с product_id/цена из services.yaml —
     они совпадают с offer id фида, что требует динамический ретаргет), lead_form,
     phone_click, messenger_click. ID пикселя из services.yaml (shop.pixel_id)."""
-    prices = []
+    entries = []
     for s in services:
         price = parse_int_or_none(s.get('price_from'))
-        if price is not None:
-            prices.append(f'"{s["slug"]}": {price}')
-    services_map = ',\n    '.join(prices)
+        vk_id = re.sub(r'[^0-9]', '', str(s.get('vk_id', '')))
+        if price is not None and vk_id:
+            entries.append(f'"{s["slug"]}": {{ id: {vk_id}, price: {price} }}')
+    services_map = ',\n    '.join(entries)
     return f"""/* События пикселя VK Рекламы — doctor-shapovalov.ru
  * Сгенерировано из services.yaml {gen_date} UTC. НЕ РЕДАКТИРОВАТЬ ВРУЧНУЮ —
  * правится services.yaml в репо doctor-shapovalov-feeds.
@@ -192,14 +216,14 @@ def build_pixel_js(services, gen_date, pixel_id=None):
     window._tmr = window._tmr || [];
     window._tmr.push({{ type: 'reachGoal', id: PID, goal: name, params: params || {{}} }});
   }}
-  /* карта услуг: slug → цена «от» (совпадает с offer id в feed.yml) */
+  /* карта услуг: slug → числовой id каталога VK + цена (offer id в feed.xml) */
   var SERVICES = {{
     {services_map}
   }};
   /* 1. Просмотр страницы услуги → service_view (динамический ретаргет) */
   var m = location.pathname.match(/^\\/([a-z-]+)\\/?$/);
   if (m && SERVICES[m[1]]) {{
-    goal('service_view', {{ product_id: m[1], price: SERVICES[m[1]], value: SERVICES[m[1]] }});
+    goal('service_view', {{ product_id: SERVICES[m[1]].id, price: SERVICES[m[1]].price, value: SERVICES[m[1]].price }});
   }}
   /* 2. Отправка любой формы Tilda → lead_form */
   if (window.jQuery) {{
@@ -227,14 +251,15 @@ def main():
     if not services:
         sys.exit('services.yaml: не найден список services')
     gen_date = datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%d %H:%M')
-    yml, included, skipped = build_yml(shop, categories, services, gen_date)
+    yml, included, skipped = build_yml(shop, categories, services, gen_date, style='yandex')
+    vkml, _, _ = build_yml(shop, categories, services, gen_date, style='vk')
     index = build_index(shop, categories, services, gen_date, included, skipped)
     pixel_js = build_pixel_js(services, gen_date, pixel_id=shop.get('pixel_id', 'ВАШ_ID_ПИКСЕЛЯ'))
     os.makedirs(DOCS, exist_ok=True)
     with open(os.path.join(DOCS, 'feed.yml'), 'w', encoding='utf-8') as f:
         f.write(yml)
     with open(os.path.join(DOCS, 'feed.xml'), 'w', encoding='utf-8') as f:
-        f.write(yml)   # дубль: VK Ads принимает application/xml, text/yaml бракует
+        f.write(vkml)  # ВК-стиль: числовые vk_id + VK-поля (feed_type yandex парсится каталогом)
     with open(os.path.join(DOCS, 'index.html'), 'w', encoding='utf-8') as f:
         f.write(index)
     with open(os.path.join(DOCS, 'vk-pixel-events.js'), 'w', encoding='utf-8') as f:

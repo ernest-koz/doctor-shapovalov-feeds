@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<yml_catalog date="2026-11-12 19:38">
+<yml_catalog date="2026-11-12 19:54">
   <shop>
     <name>Пластический хирург Шаповалов Сергей Николаевич</name>
     <company>Шаповалов Сергей Николаевич</company>
@@ -10,155 +10,215 @@
       <category id="1">Пластическая хирургия</category>
     </categories>
     <offers>
-      <offer id="abdomino" available="true">
+      <offer available="true" id="1">
+        <name>Абдоминопластика</name>
         <url>https://doctor-shapovalov.ru/abdomino/</url>
+        <price_type>2</price_type>
+        <price_unit>0</price_unit>
         <price>300000</price>
         <currencyId>RUB</currencyId>
-        <categoryId>1</categoryId>
+        <vkCategory>2053</vkCategory>
+        <weight>1.0</weight>
+        <dimensions>20.0/20.0/20.0</dimensions>
+        <ae_stock>5</ae_stock>
         <picture>https://static.tildacdn.com/tild3561-6466-4433-a239-646535656534/6_4.jpg</picture>
-        <typePrefix>Пластическая операция</typePrefix>
-        <name>Абдоминопластика — от 300 000 ₽</name>
-        <description>Подтяжка живота и коррекция диастаза у хирурга Шаповалова в СПб. Бесплатная консультация, фото до/после.</description>
+        <description><![CDATA[Подтяжка живота и коррекция диастаза у хирурга Шаповалова в СПб. Бесплатная консультация, фото до/после. Стоимость «от» (300 000 ₽) — хирургическая часть, смета под ключ фиксируется на бесплатной консультации. Пластический хирург Шаповалов С.Н., СПб и Тула. ИМЕЮТСЯ ПРОТИВОПОКАЗАНИЯ, НЕОБХОДИМА КОНСУЛЬТАЦИЯ СПЕЦИАЛИСТА.]]></description>
       </offer>
-      <offer id="blefaro" available="true">
+      <offer available="true" id="2">
+        <name>Блефаропластика</name>
         <url>https://doctor-shapovalov.ru/blefaro/</url>
+        <price_type>2</price_type>
+        <price_unit>0</price_unit>
         <price>45000</price>
         <currencyId>RUB</currencyId>
-        <categoryId>1</categoryId>
+        <vkCategory>2053</vkCategory>
+        <weight>1.0</weight>
+        <dimensions>20.0/20.0/20.0</dimensions>
+        <ae_stock>5</ae_stock>
         <picture>https://static.tildacdn.com/tild6330-3935-4630-a136-623061613565/portrait-beautiful-w.png</picture>
-        <typePrefix>Пластическая операция</typePrefix>
-        <name>Блефаропластика — от 45 000 ₽</name>
-        <description>Пластика век у хирурга Шаповалова — естественный результат. Бесплатная консультация, фото до/после.</description>
+        <description><![CDATA[Пластика век у хирурга Шаповалова — естественный результат. Бесплатная консультация, фото до/после. Стоимость «от» (45 000 ₽) — хирургическая часть, смета под ключ фиксируется на бесплатной консультации. Пластический хирург Шаповалов С.Н., СПб и Тула. ИМЕЮТСЯ ПРОТИВОПОКАЗАНИЯ, НЕОБХОДИМА КОНСУЛЬТАЦИЯ СПЕЦИАЛИСТА.]]></description>
       </offer>
-      <offer id="face-lifting" available="true">
+      <offer available="true" id="3">
+        <name>Фейслифтинг</name>
         <url>https://doctor-shapovalov.ru/face-lifting/</url>
+        <price_type>2</price_type>
+        <price_unit>0</price_unit>
         <price>360000</price>
         <currencyId>RUB</currencyId>
-        <categoryId>1</categoryId>
+        <vkCategory>2053</vkCategory>
+        <weight>1.0</weight>
+        <dimensions>20.0/20.0/20.0</dimensions>
+        <ae_stock>5</ae_stock>
         <picture>https://static.tildacdn.com/tild6365-3533-4564-b366-323930346563/noroot_4.png</picture>
-        <typePrefix>Пластическая операция</typePrefix>
-        <name>Фейслифтинг — от 360 000 ₽</name>
-        <description>Круговая подтяжка лица, подтяжка верхней/нижней трети лица у хирурга Шаповалова в СПб.</description>
+        <description><![CDATA[Круговая подтяжка лица, подтяжка верхней/нижней трети лица у хирурга Шаповалова в СПб. Стоимость «от» (360 000 ₽) — хирургическая часть, смета под ключ фиксируется на бесплатной консультации. Пластический хирург Шаповалов С.Н., СПб и Тула. ИМЕЮТСЯ ПРОТИВОПОКАЗАНИЯ, НЕОБХОДИМА КОНСУЛЬТАЦИЯ СПЕЦИАЛИСТА.]]></description>
       </offer>
-      <offer id="breast-enlargement" available="true">
+      <offer available="true" id="4">
+        <name>Увеличение груди</name>
         <url>https://doctor-shapovalov.ru/breast-enlargement/</url>
+        <price_type>2</price_type>
+        <price_unit>0</price_unit>
         <price>320000</price>
         <currencyId>RUB</currencyId>
-        <categoryId>1</categoryId>
+        <vkCategory>2053</vkCategory>
+        <weight>1.0</weight>
+        <dimensions>20.0/20.0/20.0</dimensions>
+        <ae_stock>5</ae_stock>
         <picture>https://static.tildacdn.com/tild3534-6265-4161-b831-666236303562/naked-woman-covering.png</picture>
-        <typePrefix>Пластическая операция</typePrefix>
-        <name>Увеличение груди — от 320 000 ₽</name>
-        <description>Маммопластика с имплантами — ваша естественная красота. Фото до/после, отзывы.</description>
+        <description><![CDATA[Маммопластика с имплантами — ваша естественная красота. Фото до/после, отзывы. Стоимость «от» (320 000 ₽) — хирургическая часть, смета под ключ фиксируется на бесплатной консультации. Пластический хирург Шаповалов С.Н., СПб и Тула. ИМЕЮТСЯ ПРОТИВОПОКАЗАНИЯ, НЕОБХОДИМА КОНСУЛЬТАЦИЯ СПЕЦИАЛИСТА.]]></description>
       </offer>
-      <offer id="breast-lifting" available="true">
+      <offer available="true" id="5">
+        <name>Подтяжка груди</name>
         <url>https://doctor-shapovalov.ru/breast-lifting/</url>
+        <price_type>2</price_type>
+        <price_unit>0</price_unit>
         <price>250000</price>
         <currencyId>RUB</currencyId>
-        <categoryId>1</categoryId>
+        <vkCategory>2053</vkCategory>
+        <weight>1.0</weight>
+        <dimensions>20.0/20.0/20.0</dimensions>
+        <ae_stock>5</ae_stock>
         <picture>https://static.tildacdn.com/tild6231-3436-4232-a536-353335643639/part-naked-woman-s-b.png</picture>
-        <typePrefix>Пластическая операция</typePrefix>
-        <name>Подтяжка груди — от 250 000 ₽</name>
-        <description>Мастопексия — операция по подтяжке груди без имплантов у хирурга Шаповалова в СПб.</description>
+        <description><![CDATA[Мастопексия — операция по подтяжке груди без имплантов у хирурга Шаповалова в СПб. Стоимость «от» (250 000 ₽) — хирургическая часть, смета под ключ фиксируется на бесплатной консультации. Пластический хирург Шаповалов С.Н., СПб и Тула. ИМЕЮТСЯ ПРОТИВОПОКАЗАНИЯ, НЕОБХОДИМА КОНСУЛЬТАЦИЯ СПЕЦИАЛИСТА.]]></description>
       </offer>
-      <offer id="breast-reduction" available="true">
+      <offer available="true" id="6">
+        <name>Уменьшение груди</name>
         <url>https://doctor-shapovalov.ru/breast-reduction/</url>
+        <price_type>2</price_type>
+        <price_unit>0</price_unit>
         <price>320000</price>
         <currencyId>RUB</currencyId>
-        <categoryId>1</categoryId>
+        <vkCategory>2053</vkCategory>
+        <weight>1.0</weight>
+        <dimensions>20.0/20.0/20.0</dimensions>
+        <ae_stock>5</ae_stock>
         <picture>https://static.tildacdn.com/tild3465-3961-4131-a566-343838383763/noroot.png</picture>
-        <typePrefix>Пластическая операция</typePrefix>
-        <name>Уменьшение груди — от 320 000 ₽</name>
-        <description>Редукционная маммопластика — обрести легкость и молодость. Фото до/после, отзывы.</description>
+        <description><![CDATA[Редукционная маммопластика — обрести легкость и молодость. Фото до/после, отзывы. Стоимость «от» (320 000 ₽) — хирургическая часть, смета под ключ фиксируется на бесплатной консультации. Пластический хирург Шаповалов С.Н., СПб и Тула. ИМЕЮТСЯ ПРОТИВОПОКАЗАНИЯ, НЕОБХОДИМА КОНСУЛЬТАЦИЯ СПЕЦИАЛИСТА.]]></description>
       </offer>
-      <offer id="breast-lipofilling" available="true">
+      <offer available="true" id="7">
+        <name>Липофилинг груди</name>
         <url>https://doctor-shapovalov.ru/breast-lipofilling/</url>
+        <price_type>2</price_type>
+        <price_unit>0</price_unit>
         <price>100000</price>
         <currencyId>RUB</currencyId>
-        <categoryId>1</categoryId>
+        <vkCategory>2053</vkCategory>
+        <weight>1.0</weight>
+        <dimensions>20.0/20.0/20.0</dimensions>
+        <ae_stock>5</ae_stock>
         <picture>https://static.tildacdn.com/tild6663-3731-4536-a530-373232613530/AdobeStock_529439549.png</picture>
-        <typePrefix>Пластическая операция</typePrefix>
-        <name>Липофилинг груди — от 100 000 ₽</name>
-        <description>Увеличение груди без имплантов собственным жиром.</description>
+        <description><![CDATA[Увеличение груди без имплантов собственным жиром. Стоимость «от» (100 000 ₽) — хирургическая часть, смета под ключ фиксируется на бесплатной консультации. Пластический хирург Шаповалов С.Н., СПб и Тула. ИМЕЮТСЯ ПРОТИВОПОКАЗАНИЯ, НЕОБХОДИМА КОНСУЛЬТАЦИЯ СПЕЦИАЛИСТА.]]></description>
       </offer>
-      <offer id="liposuction" available="true">
+      <offer available="true" id="8">
+        <name>Липосакция</name>
         <url>https://doctor-shapovalov.ru/liposuction/</url>
+        <price_type>2</price_type>
+        <price_unit>0</price_unit>
         <price>50000</price>
         <currencyId>RUB</currencyId>
-        <categoryId>1</categoryId>
+        <vkCategory>2053</vkCategory>
+        <weight>1.0</weight>
+        <dimensions>20.0/20.0/20.0</dimensions>
+        <ae_stock>5</ae_stock>
         <picture>https://static.tildacdn.com/tild3563-3238-4134-b636-303062316231/Body_Cont.jpg</picture>
-        <typePrefix>Пластическая операция</typePrefix>
-        <name>Липосакция — от 50 000 ₽</name>
-        <description>Вакуумная, тумесцентная, водоструйная, вибрационная липосакция у хирурга Шаповалова.</description>
+        <description><![CDATA[Вакуумная, тумесцентная, водоструйная, вибрационная липосакция у хирурга Шаповалова. Стоимость «от» (50 000 ₽) — хирургическая часть, смета под ключ фиксируется на бесплатной консультации. Пластический хирург Шаповалов С.Н., СПб и Тула. ИМЕЮТСЯ ПРОТИВОПОКАЗАНИЯ, НЕОБХОДИМА КОНСУЛЬТАЦИЯ СПЕЦИАЛИСТА.]]></description>
       </offer>
-      <offer id="lipofilling" available="true">
+      <offer available="true" id="9">
+        <name>Липофилинг ягодиц</name>
         <url>https://doctor-shapovalov.ru/lipofilling/</url>
+        <price_type>2</price_type>
+        <price_unit>0</price_unit>
         <price>100000</price>
         <currencyId>RUB</currencyId>
-        <categoryId>1</categoryId>
+        <vkCategory>2053</vkCategory>
+        <weight>1.0</weight>
+        <dimensions>20.0/20.0/20.0</dimensions>
+        <ae_stock>5</ae_stock>
         <picture>https://static.tildacdn.com/tild3439-3761-4338-b734-343364633632/noroot.png</picture>
-        <typePrefix>Пластическая операция</typePrefix>
-        <name>Липофилинг ягодиц — от 100 000 ₽</name>
-        <description>Увеличение ягодиц без имплантов и локальное моделирование фигуры — результат надолго.</description>
+        <description><![CDATA[Увеличение ягодиц без имплантов и локальное моделирование фигуры — результат надолго. Стоимость «от» (100 000 ₽) — хирургическая часть, смета под ключ фиксируется на бесплатной консультации. Пластический хирург Шаповалов С.Н., СПб и Тула. ИМЕЮТСЯ ПРОТИВОПОКАЗАНИЯ, НЕОБХОДИМА КОНСУЛЬТАЦИЯ СПЕЦИАЛИСТА.]]></description>
       </offer>
-      <offer id="bodylift" available="true">
+      <offer available="true" id="10">
+        <name>Бодилифт</name>
         <url>https://doctor-shapovalov.ru/bodylift/</url>
+        <price_type>2</price_type>
+        <price_unit>0</price_unit>
         <price>500000</price>
         <currencyId>RUB</currencyId>
-        <categoryId>1</categoryId>
+        <vkCategory>2053</vkCategory>
+        <weight>1.0</weight>
+        <dimensions>20.0/20.0/20.0</dimensions>
+        <ae_stock>5</ae_stock>
         <picture>https://static.tildacdn.com/tild3531-3038-4061-b430-626339313663/noroot.png</picture>
-        <typePrefix>Пластическая операция</typePrefix>
-        <name>Бодилифт — от 500 000 ₽</name>
-        <description>Коррекция бедер, живота, ног и спины с помощью круговой подтяжки тела.</description>
+        <description><![CDATA[Коррекция бедер, живота, ног и спины с помощью круговой подтяжки тела. Стоимость «от» (500 000 ₽) — хирургическая часть, смета под ключ фиксируется на бесплатной консультации. Пластический хирург Шаповалов С.Н., СПб и Тула. ИМЕЮТСЯ ПРОТИВОПОКАЗАНИЯ, НЕОБХОДИМА КОНСУЛЬТАЦИЯ СПЕЦИАЛИСТА.]]></description>
       </offer>
-      <offer id="bisha" available="true">
+      <offer available="true" id="11">
+        <name>Удаление комков Биша</name>
         <url>https://doctor-shapovalov.ru/bisha/</url>
+        <price_type>2</price_type>
+        <price_unit>0</price_unit>
         <price>50000</price>
         <currencyId>RUB</currencyId>
-        <categoryId>1</categoryId>
+        <vkCategory>2053</vkCategory>
+        <weight>1.0</weight>
+        <dimensions>20.0/20.0/20.0</dimensions>
+        <ae_stock>5</ae_stock>
         <picture>https://static.tildacdn.com/tild6635-6365-4266-a165-373036393135/charming-relaxed-gen.png</picture>
-        <typePrefix>Пластическая операция</typePrefix>
-        <name>Удаление комков Биша — от 50 000 ₽</name>
-        <description>Изящные скулы и естественный внешний вид после удаления комков Биша.</description>
+        <description><![CDATA[Изящные скулы и естественный внешний вид после удаления комков Биша. Стоимость «от» (50 000 ₽) — хирургическая часть, смета под ключ фиксируется на бесплатной консультации. Пластический хирург Шаповалов С.Н., СПб и Тула. ИМЕЮТСЯ ПРОТИВОПОКАЗАНИЯ, НЕОБХОДИМА КОНСУЛЬТАЦИЯ СПЕЦИАЛИСТА.]]></description>
       </offer>
-      <offer id="hips" available="true">
+      <offer available="true" id="12">
+        <name>Пластика бёдер</name>
         <url>https://doctor-shapovalov.ru/hips/</url>
+        <price_type>2</price_type>
+        <price_unit>0</price_unit>
         <price>100000</price>
         <currencyId>RUB</currencyId>
-        <categoryId>1</categoryId>
+        <vkCategory>2053</vkCategory>
+        <weight>1.0</weight>
+        <dimensions>20.0/20.0/20.0</dimensions>
+        <ae_stock>5</ae_stock>
         <picture>https://static.tildacdn.com/tild3233-3632-4438-b866-326331633138/noroot.png</picture>
-        <typePrefix>Пластическая операция</typePrefix>
-        <name>Пластика бёдер — от 100 000 ₽</name>
-        <description>Стройные ноги и бедра — результат надолго. Бесплатная консультация.</description>
+        <description><![CDATA[Стройные ноги и бедра — результат надолго. Бесплатная консультация. Стоимость «от» (100 000 ₽) — хирургическая часть, смета под ключ фиксируется на бесплатной консультации. Пластический хирург Шаповалов С.Н., СПб и Тула. ИМЕЮТСЯ ПРОТИВОПОКАЗАНИЯ, НЕОБХОДИМА КОНСУЛЬТАЦИЯ СПЕЦИАЛИСТА.]]></description>
       </offer>
-      <offer id="shoulders" available="true">
+      <offer available="true" id="13">
+        <name>Пластика плеч</name>
         <url>https://doctor-shapovalov.ru/shoulders/</url>
+        <price_type>2</price_type>
+        <price_unit>0</price_unit>
         <price>100000</price>
         <currencyId>RUB</currencyId>
-        <categoryId>1</categoryId>
+        <vkCategory>2053</vkCategory>
+        <weight>1.0</weight>
+        <dimensions>20.0/20.0/20.0</dimensions>
+        <ae_stock>5</ae_stock>
         <picture>https://static.tildacdn.com/tild3731-3265-4734-b061-643938326534/feminine-relaxed-wom.png</picture>
-        <typePrefix>Пластическая операция</typePrefix>
-        <name>Пластика плеч — от 100 000 ₽</name>
-        <description>Четкий контур рук с помощью пластической хирургии. Бесплатная консультация.</description>
+        <description><![CDATA[Четкий контур рук с помощью пластической хирургии. Бесплатная консультация. Стоимость «от» (100 000 ₽) — хирургическая часть, смета под ключ фиксируется на бесплатной консультации. Пластический хирург Шаповалов С.Н., СПб и Тула. ИМЕЮТСЯ ПРОТИВОПОКАЗАНИЯ, НЕОБХОДИМА КОНСУЛЬТАЦИЯ СПЕЦИАЛИСТА.]]></description>
       </offer>
-      <offer id="lips" available="true">
+      <offer available="true" id="14">
+        <name>Пластика губ</name>
         <url>https://doctor-shapovalov.ru/lips/</url>
+        <price_type>2</price_type>
+        <price_unit>0</price_unit>
         <price>65000</price>
         <currencyId>RUB</currencyId>
-        <categoryId>1</categoryId>
+        <vkCategory>2053</vkCategory>
+        <weight>1.0</weight>
+        <dimensions>20.0/20.0/20.0</dimensions>
+        <ae_stock>5</ae_stock>
         <picture>https://static.tildacdn.com/tild3966-6633-4861-a363-343434353563/noroot.png</picture>
-        <typePrefix>Пластическая операция</typePrefix>
-        <name>Пластика губ — от 65 000 ₽</name>
-        <description>Увеличение, уменьшение губ и исправление дефектов у хирурга Шаповалова.</description>
+        <description><![CDATA[Увеличение, уменьшение губ и исправление дефектов у хирурга Шаповалова. Стоимость «от» (65 000 ₽) — хирургическая часть, смета под ключ фиксируется на бесплатной консультации. Пластический хирург Шаповалов С.Н., СПб и Тула. ИМЕЮТСЯ ПРОТИВОПОКАЗАНИЯ, НЕОБХОДИМА КОНСУЛЬТАЦИЯ СПЕЦИАЛИСТА.]]></description>
       </offer>
-      <offer id="scars" available="true">
+      <offer available="true" id="15">
+        <name>Коррекция рубцов</name>
         <url>https://doctor-shapovalov.ru/scars/</url>
+        <price_type>2</price_type>
+        <price_unit>0</price_unit>
         <price>20000</price>
         <currencyId>RUB</currencyId>
-        <categoryId>1</categoryId>
+        <vkCategory>2053</vkCategory>
+        <weight>1.0</weight>
+        <dimensions>20.0/20.0/20.0</dimensions>
+        <ae_stock>5</ae_stock>
         <picture>https://static.tildacdn.com/tild3364-6334-4538-a466-313438386233/_1.png</picture>
-        <typePrefix>Пластическая операция</typePrefix>
-        <name>Коррекция рубцов — от 20 000 ₽</name>
-        <description>Лечение послеоперационных рубцов у хирурга Шаповалова в СПб.</description>
+        <description><![CDATA[Лечение послеоперационных рубцов у хирурга Шаповалова в СПб. Стоимость «от» (20 000 ₽) — хирургическая часть, смета под ключ фиксируется на бесплатной консультации. Пластический хирург Шаповалов С.Н., СПб и Тула. ИМЕЮТСЯ ПРОТИВОПОКАЗАНИЯ, НЕОБХОДИМА КОНСУЛЬТАЦИЯ СПЕЦИАЛИСТА.]]></description>
       </offer>
     </offers>
   </shop>
