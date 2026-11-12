@@ -1,5 +1,5 @@
 /* События пикселя VK Рекламы — doctor-shapovalov.ru
- * Сгенерировано из services.yaml 2026-11-12 18:54 UTC. НЕ РЕДАКТИРОВАТЬ ВРУЧНУЮ —
+ * Сгенерировано из services.yaml 2026-11-12 19:01 UTC. НЕ РЕДАКТИРОВАТЬ ВРУЧНУЮ —
  * правится services.yaml в репо doctor-shapovalov-feeds.
  * В кабинете VK (Сайты → пиксель → События) заранее создать события:
  *   lead_form        — категория «Оформление заявки (лид)», условие «JS событие»
@@ -8,7 +8,7 @@
  *   service_view     — категория «Просмотр карточки товара», «JS событие»
  */
 (function () {
-  var PID = window.VK_PIXEL_ID || 'ВАШ_ID_ПИКСЕЛЯ';
+  var PID = window.VK_PIXEL_ID || '3814125';
   function goal(name, params) {
     window._tmr = window._tmr || [];
     window._tmr.push({ type: 'reachGoal', id: PID, goal: name, params: params || {} });

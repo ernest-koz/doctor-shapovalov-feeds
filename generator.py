@@ -47,11 +47,11 @@ def parse_services_yaml(path):
                         stripped = stripped[2:]
                     if ':' in stripped:
                         k, v = stripped.split(':', 1)
-                        cur_cat[k.strip()] = v.strip()
+                        cur_cat[k.strip()] = re.sub(r'\s+#.*$', '', v).strip()
                     continue
                 if ':' in stripped and not stripped.startswith('- '):
                     k, v = stripped.split(':', 1)
-                    shop[k.strip()] = v.strip()
+                    shop[k.strip()] = re.sub(r'\s+#.*$', '', v).strip()
                 continue
             if section == 'services':
                 if stripped.startswith('- '):
@@ -167,10 +167,10 @@ h1{{font-size:22px}} h2{{font-size:17px;margin-top:28px}}
 """
 
 
-def build_pixel_js(services, gen_date):
+def build_pixel_js(services, gen_date, pixel_id=None):
     """JS-сниппет событий пикселя VK: service_view (с product_id/цена из services.yaml —
     они совпадают с offer id фида, что требует динамический ретаргет), lead_form,
-    phone_click, messenger_click. ID пикселя задаётся переменной VK_PIXEL_ID."""
+    phone_click, messenger_click. ID пикселя из services.yaml (shop.pixel_id)."""
     prices = []
     for s in services:
         price = parse_int_or_none(s.get('price_from'))
@@ -187,7 +187,7 @@ def build_pixel_js(services, gen_date):
  *   service_view     — категория «Просмотр карточки товара», «JS событие»
  */
 (function () {{
-  var PID = window.VK_PIXEL_ID || 'ВАШ_ID_ПИКСЕЛЯ';
+  var PID = window.VK_PIXEL_ID || '{pixel_id}';
   function goal(name, params) {{
     window._tmr = window._tmr || [];
     window._tmr.push({{ type: 'reachGoal', id: PID, goal: name, params: params || {{}} }});
@@ -229,7 +229,7 @@ def main():
     gen_date = datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%d %H:%M')
     yml, included, skipped = build_yml(shop, categories, services, gen_date)
     index = build_index(shop, categories, services, gen_date, included, skipped)
-    pixel_js = build_pixel_js(services, gen_date)
+    pixel_js = build_pixel_js(services, gen_date, pixel_id=shop.get('pixel_id', 'ВАШ_ID_ПИКСЕЛЯ'))
     os.makedirs(DOCS, exist_ok=True)
     with open(os.path.join(DOCS, 'feed.yml'), 'w', encoding='utf-8') as f:
         f.write(yml)

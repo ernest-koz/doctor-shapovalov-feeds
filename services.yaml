@@ -9,6 +9,7 @@ shop:
   company: Шаповалов Сергей Николаевич
   url: https://doctor-shapovalov.ru/
   email: shapovalov-sergey74@mail.ru
+  pixel_id: 3814125   # пиксель VK Рекламы (установлен на Тильду 12.11, все страницы)
   categories:
     - id: 1
       name: Пластическая хирургия
