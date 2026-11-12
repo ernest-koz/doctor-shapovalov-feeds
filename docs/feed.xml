@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<yml_catalog date="2026-11-12 19:22">
+  <shop>
+    <name>Пластический хирург Шаповалов Сергей Николаевич</name>
+    <company>Шаповалов Сергей Николаевич</company>
+    <url>https://doctor-shapovalov.ru/</url>
+    <email>shapovalov-sergey74@mail.ru</email>
+    <currencies><currency id="RUB" rate="1"/></currencies>
+    <categories>
+      <category id="1">Пластическая хирургия</category>
+    </categories>
+    <offers>
+      <offer id="abdomino" available="true">
+        <url>https://doctor-shapovalov.ru/abdomino/</url>
+        <price>300000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <name>Абдоминопластика — от 300 000 ₽</name>
+        <description>Подтяжка живота и коррекция диастаза у хирурга Шаповалова в СПб. Бесплатная консультация, фото до/после.</description>
+        <picture>https://static.tildacdn.com/tild3561-6466-4433-a239-646535656534/6_4.jpg</picture>
+        <typePrefix>Пластическая операция</typePrefix>
+      </offer>
+      <offer id="blefaro" available="true">
+        <url>https://doctor-shapovalov.ru/blefaro/</url>
+        <price>45000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <name>Блефаропластика — от 45 000 ₽</name>
+        <description>Пластика век у хирурга Шаповалова — естественный результат. Бесплатная консультация, фото до/после.</description>
+        <picture>https://static.tildacdn.com/tild6330-3935-4630-a136-623061613565/portrait-beautiful-w.png</picture>
+        <typePrefix>Пластическая операция</typePrefix>
+      </offer>
+      <offer id="face-lifting" available="true">
+        <url>https://doctor-shapovalov.ru/face-lifting/</url>
+        <price>360000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <name>Фейслифтинг — от 360 000 ₽</name>
+        <description>Круговая подтяжка лица, подтяжка верхней/нижней трети лица у хирурга Шаповалова в СПб.</description>
+        <picture>https://static.tildacdn.com/tild6365-3533-4564-b366-323930346563/noroot_4.png</picture>
+        <typePrefix>Пластическая операция</typePrefix>
+      </offer>
+      <offer id="breast-enlargement" available="true">
+        <url>https://doctor-shapovalov.ru/breast-enlargement/</url>
+        <price>320000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <name>Увеличение груди — от 320 000 ₽</name>
+        <description>Маммопластика с имплантами — ваша естественная красота. Фото до/после, отзывы.</description>
+        <picture>https://static.tildacdn.com/tild3534-6265-4161-b831-666236303562/naked-woman-covering.png</picture>
+        <typePrefix>Пластическая операция</typePrefix>
+      </offer>
+      <offer id="breast-lifting" available="true">
+        <url>https://doctor-shapovalov.ru/breast-lifting/</url>
+        <price>250000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <name>Подтяжка груди — от 250 000 ₽</name>
+        <description>Мастопексия — операция по подтяжке груди без имплантов у хирурга Шаповалова в СПб.</description>
+        <picture>https://static.tildacdn.com/tild6231-3436-4232-a536-353335643639/part-naked-woman-s-b.png</picture>
+        <typePrefix>Пластическая операция</typePrefix>
+      </offer>
+      <offer id="breast-reduction" available="true">
+        <url>https://doctor-shapovalov.ru/breast-reduction/</url>
+        <price>320000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <name>Уменьшение груди — от 320 000 ₽</name>
+        <description>Редукционная маммопластика — обрести легкость и молодость. Фото до/после, отзывы.</description>
+        <picture>https://static.tildacdn.com/tild3465-3961-4131-a566-343838383763/noroot.png</picture>
+        <typePrefix>Пластическая операция</typePrefix>
+      </offer>
+      <offer id="breast-lipofilling" available="true">
+        <url>https://doctor-shapovalov.ru/breast-lipofilling/</url>
+        <price>100000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <name>Липофилинг груди — от 100 000 ₽</name>
+        <description>Увеличение груди без имплантов собственным жиром.</description>
+        <picture>https://static.tildacdn.com/tild6663-3731-4536-a530-373232613530/AdobeStock_529439549.png</picture>
+        <typePrefix>Пластическая операция</typePrefix>
+      </offer>
+      <offer id="liposuction" available="true">
+        <url>https://doctor-shapovalov.ru/liposuction/</url>
+        <price>50000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <name>Липосакция — от 50 000 ₽</name>
+        <description>Вакуумная, тумесцентная, водоструйная, вибрационная липосакция у хирурга Шаповалова.</description>
+        <picture>https://static.tildacdn.com/tild3563-3238-4134-b636-303062316231/Body_Cont.jpg</picture>
+        <typePrefix>Пластическая операция</typePrefix>
+      </offer>
+      <offer id="lipofilling" available="true">
+        <url>https://doctor-shapovalov.ru/lipofilling/</url>
+        <price>100000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <name>Липофилинг ягодиц — от 100 000 ₽</name>
+        <description>Увеличение ягодиц без имплантов и локальное моделирование фигуры — результат надолго.</description>
+        <picture>https://static.tildacdn.com/tild3439-3761-4338-b734-343364633632/noroot.png</picture>
+        <typePrefix>Пластическая операция</typePrefix>
+      </offer>
+      <offer id="bodylift" available="true">
+        <url>https://doctor-shapovalov.ru/bodylift/</url>
+        <price>500000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <name>Бодилифт — от 500 000 ₽</name>
+        <description>Коррекция бедер, живота, ног и спины с помощью круговой подтяжки тела.</description>
+        <picture>https://static.tildacdn.com/tild3531-3038-4061-b430-626339313663/noroot.png</picture>
+        <typePrefix>Пластическая операция</typePrefix>
+      </offer>
+      <offer id="bisha" available="true">
+        <url>https://doctor-shapovalov.ru/bisha/</url>
+        <price>50000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <name>Удаление комков Биша — от 50 000 ₽</name>
+        <description>Изящные скулы и естественный внешний вид после удаления комков Биша.</description>
+        <picture>https://static.tildacdn.com/tild6635-6365-4266-a165-373036393135/charming-relaxed-gen.png</picture>
+        <typePrefix>Пластическая операция</typePrefix>
+      </offer>
+      <offer id="hips" available="true">
+        <url>https://doctor-shapovalov.ru/hips/</url>
+        <price>100000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <name>Пластика бёдер — от 100 000 ₽</name>
+        <description>Стройные ноги и бедра — результат надолго. Бесплатная консультация.</description>
+        <picture>https://static.tildacdn.com/tild3233-3632-4438-b866-326331633138/noroot.png</picture>
+        <typePrefix>Пластическая операция</typePrefix>
+      </offer>
+      <offer id="shoulders" available="true">
+        <url>https://doctor-shapovalov.ru/shoulders/</url>
+        <price>100000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <name>Пластика плеч — от 100 000 ₽</name>
+        <description>Четкий контур рук с помощью пластической хирургии. Бесплатная консультация.</description>
+        <picture>https://static.tildacdn.com/tild3731-3265-4734-b061-643938326534/feminine-relaxed-wom.png</picture>
+        <typePrefix>Пластическая операция</typePrefix>
+      </offer>
+      <offer id="lips" available="true">
+        <url>https://doctor-shapovalov.ru/lips/</url>
+        <price>65000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <name>Пластика губ — от 65 000 ₽</name>
+        <description>Увеличение, уменьшение губ и исправление дефектов у хирурга Шаповалова.</description>
+        <picture>https://static.tildacdn.com/tild3966-6633-4861-a363-343434353563/noroot.png</picture>
+        <typePrefix>Пластическая операция</typePrefix>
+      </offer>
+      <offer id="scars" available="true">
+        <url>https://doctor-shapovalov.ru/scars/</url>
+        <price>20000</price>
+        <currencyId>RUB</currencyId>
+        <categoryId>1</categoryId>
+        <name>Коррекция рубцов — от 20 000 ₽</name>
+        <description>Лечение послеоперационных рубцов у хирурга Шаповалова в СПб.</description>
+        <picture>https://static.tildacdn.com/tild3364-6334-4538-a466-313438386233/_1.png</picture>
+        <typePrefix>Пластическая операция</typePrefix>
+      </offer>
+    </offers>
+  </shop>
+</yml_catalog>
