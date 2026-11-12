@@ -233,6 +233,8 @@ def main():
     os.makedirs(DOCS, exist_ok=True)
     with open(os.path.join(DOCS, 'feed.yml'), 'w', encoding='utf-8') as f:
         f.write(yml)
+    with open(os.path.join(DOCS, 'feed.xml'), 'w', encoding='utf-8') as f:
+        f.write(yml)   # дубль: VK Ads принимает application/xml, text/yaml бракует
     with open(os.path.join(DOCS, 'index.html'), 'w', encoding='utf-8') as f:
         f.write(index)
     with open(os.path.join(DOCS, 'vk-pixel-events.js'), 'w', encoding='utf-8') as f:
@@ -240,7 +242,7 @@ def main():
     # XML-валидация
     import xml.etree.ElementTree as ET
     ET.fromstring(yml)
-    print(f'OK: feed.yml ({included} услуг), index.html, vk-pixel-events.js | ждут цены: {", ".join(skipped) if skipped else "нет"}')
+    print(f'OK: feed.yml + feed.xml ({included} услуг), index.html, vk-pixel-events.js | ждут цены: {", ".join(skipped) if skipped else "нет"}')
 
 
 if __name__ == '__main__':

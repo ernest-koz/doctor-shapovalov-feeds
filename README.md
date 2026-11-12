@@ -35,10 +35,10 @@ docs/feed.yml + docs/index.html   (GitHub Pages раздаёт статику и
 ## Первичная настройка (один раз)
 
 1. **Включить Pages:** Settings → Pages → Source: «Deploy from a branch», Branch: `main`, Folder: `/docs` → Save.
-2. Проверить: `https://ernest-koz.github.io/doctor-shapovalov-feeds/` (index) и `.../feed.yml`.
+2. Проверить: `https://ernest-koz.github.io/doctor-shapovalov-feeds/` (index) и `.../feed.xml`.
 3. **Яндекс.Вебмастер:** раздел «Товары и цены» → добавить фид по URL → дождаться загрузки → проверить статистику.
-4. **VK Реклама:** Кабинет → Каталоги → «Создать каталог» → «По ссылке» → вставить URL `feed.yml` → выбрать тип YML → после загрузки создать кампанию динамического ретаргета на сегмент посетителей сайта.
-5. **Предусловие VK:** пиксель VK должен быть установлен на сайт (без него события не собираются и ретаргету не на кого смотреть).
+4. **VK Реклама:** ⚠️ использовать `feed.xml` — VK бракует content-type `text/yaml` у feed.yml («Не удалось выполнить запрос по HTTP»). Кабинет → Каталоги → «По ссылке» → URL `feed.xml`. Либо через API: `POST /api/v2/remarketing/pricelists.json {"name":..., "export_url":..., "status":"active"}` — так и создано 12.11: id **2454362**, «Услуги сайт (feed)».
+5. **Пиксель VK:** установлен ✅ (12.11, ID 3814125, события service_view / lead_form / phone_click / messenger_click + price_page_view).
 
 ## Локальная генерация (для проверки)
 
