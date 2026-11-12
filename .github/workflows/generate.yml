@@ -1,0 +1,34 @@
+name: generate-feeds
+
+on:
+  push:
+    paths:
+      - 'services.yaml'
+      - 'generator.py'
+  schedule:
+    - cron: '30 3 * * *'   # ежедневно 03:30 UTC — обновляет дату фида
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python generator.py
+      - name: Commit regenerated feeds
+        run: |
+          git config user.name "feed-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add docs/
+          if git diff --cached --quiet; then
+            echo "No changes in feeds"
+          else
+            git commit -m "regenerate feeds $(date -u +%Y-%m-%d)"
+            git push
+          fi
