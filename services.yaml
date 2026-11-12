@@ -19,59 +19,75 @@ services:
     name: Абдоминопластика
     price_from: 300000   # тайтл/страница 12.11 (мини 300K, классическая 350K, круговая торсо 500K); ⚠️ на /ceny мини всё ещё 170K — поправить в Тильде
     description: Подтяжка живота и коррекция диастаза у хирурга Шаповалова в СПб. Бесплатная консультация, фото до/после.
+    picture: https://static.tildacdn.com/tild3561-6466-4433-a239-646535656534/6_4.jpg
   - slug: blefaro
     name: Блефаропластика
     price_from: 45000    # тайтл/страница 12.11 (верхняя); нижняя 95K, круговая 360K — варианты на странице
     description: Пластика век у хирурга Шаповалова — естественный результат. Бесплатная консультация, фото до/после.
+    picture: https://static.tildacdn.com/tild6330-3935-4630-a136-623061613565/portrait-beautiful-w.png
   - slug: face-lifting
     name: Фейслифтинг
     price_from: 360000   # тайтл/страница/прайс 12.11 (круговая+шеи 370K, эндоскоп. средней трети 330K, лоб 123K)
     description: Круговая подтяжка лица, подтяжка верхней/нижней трети лица у хирурга Шаповалова в СПб.
+    picture: https://static.tildacdn.com/tild6365-3533-4564-b366-323930346563/noroot_4.png
   - slug: breast-enlargement
     name: Увеличение груди
     price_from: 320000   # тайтл/страница 12.11
     description: Маммопластика с имплантами — ваша естественная красота. Фото до/после, отзывы.
+    picture: https://static.tildacdn.com/tild3534-6265-4161-b831-666236303562/naked-woman-covering.png
   - slug: breast-lifting
     name: Подтяжка груди
     price_from: 250000   # тайтл/страница 12.11 (вертикальная 250K, якорная 360K, SPAIR 530K)
     description: Мастопексия — операция по подтяжке груди без имплантов у хирурга Шаповалова в СПб.
+    picture: https://static.tildacdn.com/tild6231-3436-4232-a536-353335643639/part-naked-woman-s-b.png
   - slug: breast-reduction
     name: Уменьшение груди
     price_from: 320000   # тайтл/страница 12.11
     description: Редукционная маммопластика — обрести легкость и молодость. Фото до/после, отзывы.
+    picture: https://static.tildacdn.com/tild3465-3961-4131-a566-343838383763/noroot.png
   - slug: breast-lipofilling
     name: Липофилинг груди
     price_from: 100000   # тайтл/страница 12.11
     description: Увеличение груди без имплантов собственным жиром.
+    picture: https://static.tildacdn.com/tild6663-3731-4536-a530-373232613530/AdobeStock_529439549.png
   - slug: liposuction
     name: Липосакция
     price_from: 50000    # тайтл/страница 12.11 (за одну зону)
     description: Вакуумная, тумесцентная, водоструйная, вибрационная липосакция у хирурга Шаповалова.
+    picture: https://static.tildacdn.com/tild3563-3238-4134-b636-303062316231/Body_Cont.jpg
   - slug: lipofilling
     name: Липофилинг ягодиц
     price_from: 100000   # тайтл/страница 12.11
     description: Увеличение ягодиц без имплантов и локальное моделирование фигуры — результат надолго.
+    picture: https://static.tildacdn.com/tild3439-3761-4338-b734-343364633632/noroot.png
   - slug: bodylift
     name: Бодилифт
     price_from: 500000   # тайтл/страница 12.11 (снапшот 12.10 был 400K — устарел)
     description: Коррекция бедер, живота, ног и спины с помощью круговой подтяжки тела.
+    picture: https://static.tildacdn.com/tild3531-3038-4061-b430-626339313663/noroot.png
   - slug: bisha
     name: Удаление комков Биша
     price_from: 50000    # тайтл/страница 12.11
     description: Изящные скулы и естественный внешний вид после удаления комков Биша.
+    picture: https://static.tildacdn.com/tild6635-6365-4266-a165-373036393135/charming-relaxed-gen.png
   - slug: hips
     name: Пластика бёдер
     price_from: 100000   # тайтл/страница 12.11
     description: Стройные ноги и бедра — результат надолго. Бесплатная консультация.
+    picture: https://static.tildacdn.com/tild3233-3632-4438-b866-326331633138/noroot.png
   - slug: shoulders
     name: Пластика плеч
     price_from: 100000   # тайтл/страница 12.11
     description: Четкий контур рук с помощью пластической хирургии. Бесплатная консультация.
+    picture: https://static.tildacdn.com/tild3731-3265-4734-b061-643938326534/feminine-relaxed-wom.png
   - slug: lips
     name: Пластика губ
     price_from: 65000    # тайтл/страница 12.11
     description: Увеличение, уменьшение губ и исправление дефектов у хирурга Шаповалова.
+    picture: https://static.tildacdn.com/tild3966-6633-4861-a363-343434353563/noroot.png
   - slug: scars
     name: Коррекция рубцов
     price_from: 20000    # тайтл/страница 12.11 (снапшот 12.10 был 45K — устарел)
     description: Лечение послеоперационных рубцов у хирурга Шаповалова в СПб.
+    picture: https://static.tildacdn.com/tild3364-6334-4538-a466-313438386233/_1.png
+
