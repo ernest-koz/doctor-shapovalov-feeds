@@ -106,13 +106,13 @@ def build_yml(shop, categories, services, gen_date):
         L.append(f'        <price>{price}</price>')
         L.append('        <currencyId>RUB</currencyId>')
         L.append(f'        <categoryId>{xesc(categories[0].get("id", "1") if categories else "1")}</categoryId>')
-        price_str = f'{price:,}'.replace(',', ' ')
-        L.append(f'        <name>{xesc(s.get("name", ""))} — от {price_str} ₽</name>')
-        L.append(f'        <description>{xesc(s.get("description", ""))}</description>')
         pic = (s.get('picture') or '').strip()
         if pic:
             L.append(f'        <picture>{xesc(pic)}</picture>')
         L.append('        <typePrefix>Пластическая операция</typePrefix>')
+        price_str = f'{price:,}'.replace(',', ' ')
+        L.append(f'        <name>{xesc(s.get("name", ""))} — от {price_str} ₽</name>')
+        L.append(f'        <description>{xesc(s.get("description", ""))}</description>')
         L.append('      </offer>')
         included += 1
     L.append('    </offers>')
