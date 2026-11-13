@@ -121,8 +121,13 @@ def build_yml(shop, categories, services, gen_date, style='yandex'):
             pic = (s.get('picture') or '').strip()
             if pic:
                 L.append(f'        <picture>{xesc(pic)}</picture>')
-            desc = xesc(s.get('description', '')) + f' Стоимость «от» ({price_str} ₽) — хирургическая часть, смета под ключ фиксируется на бесплатной консультации. Пластический хирург Шаповалов С.Н., СПб и Тула. ИМЕЮТСЯ ПРОТИВОПОКАЗАНИЯ, НЕОБХОДИМА КОНСУЛЬТАЦИЯ СПЕЦИАЛИСТА.'
-            L.append(f'        <description><![CDATA[{desc}]]></description>')
+            # VK ограничивает длину description (~256) — держим ≤190 с запасом
+            base = xesc(s.get('description', ''))
+            tail = f' Цена «от» {price_str} ₽ — точная смета «под ключ» на бесплатной консультации. Имеются противопоказания.'
+            if len(base) + len(tail) > 190:
+                budget = 190 - len(tail)
+                base = base[:budget].rsplit(' ', 1)[0] + '…'
+            L.append(f'        <description><![CDATA[{base}{tail}]]></description>')
         else:
             # Яндекс-стиль
             L.append(f'      <offer id="{xesc(s.get("slug", ""))}" available="true">')
