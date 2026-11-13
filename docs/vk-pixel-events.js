@@ -1,10 +1,12 @@
 /* События пикселя VK Рекламы — doctor-shapovalov.ru
- * Сгенерировано из services.yaml 2026-11-13 16:50 UTC. НЕ РЕДАКТИРОВАТЬ ВРУЧНУЮ —
+ * Сгенерировано из services.yaml 2026-11-13 17:50 UTC. НЕ РЕДАКТИРОВАТЬ ВРУЧНУЮ —
  * правится services.yaml в репо doctor-shapovalov-feeds.
  * События (созданы в кабинете VK → пиксель → События):
- *   service_view_v2   — «Просмотр карточки товара»: люди, 15+ секунд на странице услуги,
- *                       1 раз за сессию на услугу. Боты/мониторы/отказы отфильтрованы.
- *                       (v2 — чистый счётчик: старое событие service_view зашумлено ботами)
+ *   viewProduct       — «Просмотр карточки товара» — ОФИЦИАЛЬНОЕ событие дин. ретаргета:
+ *                       люди, 15+ секунд на странице услуги, 1 раз за сессию,
+ *                       боты/мониторы/отказы отфильтрованы. product_id = vk_id из фида,
+ *                       value = цена (верхний уровень push-а, как требует справка VK).
+ *   price_page_view   — «Пользовательские конверсии»: 15+ секунд на странице /ceny
  *   price_page_view   — «Пользовательские конверсии»: 15+ секунд на странице /ceny
  *   lead_form         — «Оформление заявки (лид)»: успешная отправка формы
  *   phone_click       — «Контакт»: клик по телефону
@@ -56,8 +58,16 @@
       delayedOnce('vk_pv_ceny', function () { goal('price_page_view'); });
     }
     if (SERVICES[slug]) {
+      /* официальное событие дин. ретаргета: goal=viewProduct, value наверху, product_id в params */
       delayedOnce('vk_sv_' + slug, function () {
-        goal('service_view_v2', { product_id: SERVICES[slug].id, price: SERVICES[slug].price, value: SERVICES[slug].price });
+        var svc = SERVICES[slug];
+        window._tmr.push({
+          type: 'reachGoal',
+          id: PID,
+          value: String(svc.price),
+          goal: 'viewProduct',
+          params: { product_id: String(svc.id) }
+        });
       });
     }
   }
