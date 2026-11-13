@@ -1,9 +1,10 @@
 /* События пикселя VK Рекламы — doctor-shapovalov.ru
- * Сгенерировано из services.yaml 2026-11-13 16:43 UTC. НЕ РЕДАКТИРОВАТЬ ВРУЧНУЮ —
+ * Сгенерировано из services.yaml 2026-11-13 16:49 UTC. НЕ РЕДАКТИРОВАТЬ ВРУЧНУЮ —
  * правится services.yaml в репо doctor-shapovalov-feeds.
  * События (созданы в кабинете VK → пиксель → События):
- *   service_view      — «Просмотр карточки товара»: люди, 15+ секунд на странице услуги,
+ *   service_view_v2   — «Просмотр карточки товара»: люди, 15+ секунд на странице услуги,
  *                       1 раз за сессию на услугу. Боты/мониторы/отказы отфильтрованы.
+ *                       (v2 — чистый счётчик: старое событие service_view зашумлено ботами)
  *   price_page_view   — «Пользовательские конверсии»: 15+ секунд на странице /ceny
  *   lead_form         — «Оформление заявки (лид)»: успешная отправка формы
  *   phone_click       — «Контакт»: клик по телефону
@@ -56,7 +57,7 @@
     }
     if (SERVICES[slug]) {
       delayedOnce('vk_sv_' + slug, function () {
-        goal('service_view', { product_id: SERVICES[slug].id, price: SERVICES[slug].price, value: SERVICES[slug].price });
+        goal('service_view_v2', { product_id: SERVICES[slug].id, price: SERVICES[slug].price, value: SERVICES[slug].price });
       });
     }
   }

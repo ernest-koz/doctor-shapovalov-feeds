@@ -210,8 +210,9 @@ def build_pixel_js(services, gen_date, pixel_id=None):
  * Сгенерировано из services.yaml {gen_date} UTC. НЕ РЕДАКТИРОВАТЬ ВРУЧНУЮ —
  * правится services.yaml в репо doctor-shapovalov-feeds.
  * События (созданы в кабинете VK → пиксель → События):
- *   service_view      — «Просмотр карточки товара»: люди, 15+ секунд на странице услуги,
+ *   service_view_v2   — «Просмотр карточки товара»: люди, 15+ секунд на странице услуги,
  *                       1 раз за сессию на услугу. Боты/мониторы/отказы отфильтрованы.
+ *                       (v2 — чистый счётчик: старое событие service_view зашумлено ботами)
  *   price_page_view   — «Пользовательские конверсии»: 15+ секунд на странице /ceny
  *   lead_form         — «Оформление заявки (лид)»: успешная отправка формы
  *   phone_click       — «Контакт»: клик по телефону
@@ -250,7 +251,7 @@ def build_pixel_js(services, gen_date, pixel_id=None):
     }}
     if (SERVICES[slug]) {{
       delayedOnce('vk_sv_' + slug, function () {{
-        goal('service_view', {{ product_id: SERVICES[slug].id, price: SERVICES[slug].price, value: SERVICES[slug].price }});
+        goal('service_view_v2', {{ product_id: SERVICES[slug].id, price: SERVICES[slug].price, value: SERVICES[slug].price }});
       }});
     }}
   }}
