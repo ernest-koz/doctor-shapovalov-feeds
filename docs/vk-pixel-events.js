@@ -1,10 +1,10 @@
 /* События пикселя VK Рекламы — doctor-shapovalov.ru
- * Сгенерировано из services.yaml 2026-11-13 15:55 UTC. НЕ РЕДАКТИРОВАТЬ ВРУЧНУЮ —
+ * Сгенерировано из services.yaml 2026-11-13 16:42 UTC. НЕ РЕДАКТИРОВАТЬ ВРУЧНУЮ —
  * правится services.yaml в репо doctor-shapovalov-feeds.
  * События (созданы в кабинете VK → пиксель → События):
- *   service_view      — «Просмотр карточки товара»: люди, 2+ сек на странице услуги,
- *                       1 раз за сессию на услугу. Боты/мониторы отфильтрованы.
- *   price_page_view   — «Пользовательские конверсии»: страница /ceny
+ *   service_view      — «Просмотр карточки товара»: люди, 15+ секунд на странице услуги,
+ *                       1 раз за сессию на услугу. Боты/мониторы/отказы отфильтрованы.
+ *   price_page_view   — «Пользовательские конверсии»: 15+ секунд на странице /ceny
  *   lead_form         — «Оформление заявки (лид)»: успешная отправка формы
  *   phone_click       — «Контакт»: клик по телефону
  *   messenger_click   — «Контакт»: клик по мессенджеру
@@ -17,6 +17,17 @@
   function goal(name, params) {
     window._tmr = window._tmr || [];
     window._tmr.push({ type: 'reachGoal', id: PID, goal: name, params: params || {} });
+  }
+  /* событие через DELAY мс на странице, 1 раз за сессию (sessionStorage) */
+  var DELAY = 15000;
+  function delayedOnce(key, fn) {
+    var seen = null;
+    try { seen = sessionStorage.getItem(key); } catch (e) {}
+    if (seen) return;
+    setTimeout(function () {
+      try { sessionStorage.setItem(key, '1'); } catch (e) {}
+      fn();
+    }, DELAY);
   }
   /* карта услуг: slug → числовой id каталога VK + цена (offer id в feed.xml) */
   var SERVICES = {
@@ -41,23 +52,12 @@
   if (m) {
     var slug = m[1];
     if (slug === 'ceny') {
-      goal('price_page_view');
+      delayedOnce('vk_pv_ceny', function () { goal('price_page_view'); });
     }
     if (SERVICES[slug]) {
-      /* service_view: через 2 секунды на странице (отсекаем мгновенные отказы),
-         1 раз за сессию на услугу (sessionStorage) */
-      var key = 'vk_sv_' + slug;
-      var fire = function () {
+      delayedOnce('vk_sv_' + slug, function () {
         goal('service_view', { product_id: SERVICES[slug].id, price: SERVICES[slug].price, value: SERVICES[slug].price });
-      };
-      var seen = null;
-      try { seen = sessionStorage.getItem(key); } catch (e) {}
-      if (!seen) {
-        setTimeout(function () {
-          try { sessionStorage.setItem(key, '1'); } catch (e) {}
-          fire();
-        }, 2000);
-      }
+      });
     }
   }
   /* 2. Отправка любой формы Tilda → lead_form */
